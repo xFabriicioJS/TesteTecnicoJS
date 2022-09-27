@@ -171,7 +171,27 @@ const preencheModal = () => {
   document.querySelector("#modal-hobbies").innerHTML = tags
     .map((tag) => tag)
     .join(", ");
+
+    //montando JSON para exibir no modal
+    const jsonobject = {
+      nome: nome.value,
+      cpf: cpf.value,
+      dataNascimento: dataNascimento.value,
+      idade: idade.value,
+      cep: cep.value,
+      rua: rua.value,
+      bairro: bairro.value,
+      cidade: cidade.value,
+      estado: estado.value,
+      numero: numero.value,
+      hobbies: tags,
+    }
+    document.querySelector("#modal-json").innerHTML = JSON.stringify(jsonobject);
 };
+
+
+  
+
 
 // ------------> FUNCIONALIDADE DE ADICIONAR HOBBIES <--------------------
 //pegando os elementos necessários para a funcionalidade dos hobbies
